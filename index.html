@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flat Design Character Maker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="description" content="Just a simple flat design vector based character designer.">
+    <meta name="author" content="Michael Schwartz">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" href="libraries/normalize/normalize.css" />
+    <link rel="stylesheet" href="libraries/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="libraries/alertifyjs/css/alertify.min.css">
+    <link rel="stylesheet" href="libraries/alertifyjs/css/themes/default.min.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.base.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.android.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.arctic.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.black.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.blackberry.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.bootstrap.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.classic.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.darkblue.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.energyblue.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.fresh.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.highcontrast.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.metro.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.metrodark.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.mobile.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.office.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.orange.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.shinyblack.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.summer.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.ui-darkness.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.ui-le-frog.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.ui-lightness.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.ui-overcast.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.ui-redmond.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.ui-smoothness.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.ui-start.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.ui-sunny.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.web.css">
+    <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.windowsphone.css">
+    <link rel="stylesheet" href="libraries/font-awesome/font-awesome.css" />
+    <link rel="stylesheet" href="libraries/font-awesome/macset.css" />
+    <link rel="stylesheet" href="libraries/jqueryminicolors/jquery.minicolors.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="libraries/jquery/jquery.js"></script>
+    <script src="libraries/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="libraries/jqueryminicolors/jquery.minicolors.js"></script>
+    <script src="libraries/sweetalert2/sweetalert2.min.js"></script>
+    <script src="libraries/FileSaver/FileSaver.js"></script>
+    <script src="libraries/FileSaver/Blob.js"></script>
+    <script src="libraries/jqwidgets/jqxcore.js"></script>
+    <script src="libraries/jqwidgets/jqxsplitter.js"></script>
+    <script src="libraries/alertifyjs/alertify.min.js"></script>
+    <script src="libraries/fabricjs/fabric.min.js"></script>
+    <script src="js/moveit.js"></script>
+  </head>
+  <body>
+    <!-- splitter container -->
+    <div id="mainSplitter">
+      <!-- displays character result -->
+      <div class="splitter-panel viewer">
+        <?xml version="1.0" standalone="no"?>
+        <!-- Generator: Gravit.io -->
+        <svg id="character" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 912" width="500" height="912" preserveAspectRatio="xMidYMin">
+          <g id="group">
+            <path d=" M 106.415 879.425 C 106.415 861.447 170.753 846.85 250 846.85 C 329.247 846.85 393.585 861.447 393.585 879.425 C 393.585 897.404 329.247 912 250 912 C 170.753 912 106.415 897.404 106.415 879.425 Z " fill="rgb(0,0,0)" fill-opacity="0.25" />
+            <path d=" M 180.982 879.129 C 174.713 871.074 191.191 862.457 184.049 845.393 L 230.061 845.393 L 223.926 869.929 Q 207.785 881.101 180.982 879.129 Z " fill="rgb(0,0,0)" />
+            <path d=" M 319.018 879.129 C 325.287 871.074 308.809 862.457 315.951 845.393 L 269.939 845.393 L 276.074 869.929 Q 292.215 881.101 319.018 879.129 Z " fill="rgb(0,0,0)" />
+            <path d=" M 156.442 596.973 C 221.668 607.925 284.071 607.956 343.558 596.973 C 350.774 616.938 355.917 641.505 358.896 670.579 C 334.295 776.769 322.056 839.16 322.086 857.661 L 269.939 857.661 C 265.334 823.357 261.275 771.25 257.669 701.248 C 251.479 703.504 246.397 703.535 242.331 701.248 C 237.447 781.815 234.411 833.983 233.129 857.661 L 174.847 857.661 C 173.455 822.967 162.238 760.637 141.104 670.579 C 143.431 647.864 148.574 623.359 156.442 596.973 Z " fill="rgb(68,62,59)" />
+            <path d=" M 250.421 610.14 C 218.158 610.431 186.828 606.038 156.442 596.973 C 158.456 584.869 163.538 572.571 171.779 560.17 L 177.914 422.159 C 192.638 412.144 207.945 405.979 223.926 403.758 L 223.926 394.557 L 250.421 394.557 L 250.421 610.14 Z " fill="rgb(165,204,169)" />
+            <path d=" M 250.421 610.14 C 280.652 609.867 311.701 605.482 343.558 596.973 C 339.167 578.866 333.063 566.629 325.153 560.17 L 319.018 422.159 C 305.985 413.057 291.701 406.954 276.074 403.758 L 276.074 394.557 L 250.421 394.557 L 250.421 610.14 Z " fill="rgb(187,221,190)" />
+            <path d=" M 250.421 433.66 L 223.827 404.784 L 276.173 404.784 L 250.421 433.66 Z " fill="rgb(116,198,184)" />
+            <path d=" M 263.538 428.744 C 263.449 420.602 258.36 431.995 258.226 424.908 L 250.421 433.66 L 241.563 424.042 C 241.487 431.428 236.514 425.637 236.462 433.66 C 234.085 495.453 239.106 563.225 241.563 609.845 C 246.902 610.206 252.474 610.224 258.226 609.845 C 262.125 549.069 267.243 476.058 263.538 428.744 Z " fill="rgb(223,223,223)" />
+            <path d=" M 241.877 422.831 L 236.462 440.879 L 211.191 406.589 C 212.425 405.981 216.655 404.796 223.827 402.979 L 241.877 422.831 Z " fill="rgb(255,255,255)" />
+            <path d=" M 258.123 424.636 L 263.538 440.879 L 288.809 406.589 C 287.575 405.981 283.345 404.796 276.173 402.979 L 258.123 424.636 Z " fill="rgb(255,255,255)" />
+            <path d=" M 247.292 597.157 C 247.292 594.762 248.506 592.816 250 592.816 C 251.494 592.816 252.708 594.762 252.708 597.157 C 252.708 599.553 251.494 601.498 250 601.498 C 248.506 601.498 247.292 599.553 247.292 597.157 Z  M 247.292 553.747 C 247.292 551.351 248.506 549.406 250 549.406 C 251.494 549.406 252.708 551.351 252.708 553.747 C 252.708 556.143 251.494 558.088 250 558.088 C 248.506 558.088 247.292 556.143 247.292 553.747 Z  M 247.292 510.336 C 247.292 507.94 248.506 505.995 250 505.995 C 251.494 505.995 252.708 507.94 252.708 510.336 C 252.708 512.732 251.494 514.677 250 514.677 C 248.506 514.677 247.292 512.732 247.292 510.336 Z  M 247.292 466.925 C 247.292 464.529 248.506 462.584 250 462.584 C 251.494 462.584 252.708 464.529 252.708 466.925 C 252.708 469.321 251.494 471.266 250 471.266 C 248.506 471.266 247.292 469.321 247.292 466.925 Z  M 247.292 575.452 C 247.292 573.056 248.506 571.111 250 571.111 C 251.494 571.111 252.708 573.056 252.708 575.452 C 252.708 577.848 251.494 579.793 250 579.793 C 248.506 579.793 247.292 577.848 247.292 575.452 Z  M 247.292 532.041 C 247.292 529.645 248.506 527.7 250 527.7 C 251.494 527.7 252.708 529.645 252.708 532.041 C 252.708 534.437 251.494 536.382 250 536.382 C 248.506 536.382 247.292 534.437 247.292 532.041 Z  M 247.292 488.63 C 247.292 486.235 248.506 484.289 250 484.289 C 251.494 484.289 252.708 486.235 252.708 488.63 C 252.708 491.026 251.494 492.971 250 492.971 C 248.506 492.971 247.292 491.026 247.292 488.63 Z  M 247.292 445.22 C 247.292 442.824 248.506 440.879 250 440.879 C 251.494 440.879 252.708 442.824 252.708 445.22 C 252.708 447.615 251.494 449.561 250 449.561 C 248.506 449.561 247.292 447.615 247.292 445.22 Z " fill-rule="evenodd" fill="rgb(0,0,0)" />
+            <path d=" M 276.173 379.518 L 223.827 381.323 L 223.827 404.784 C 240.408 409.407 257.893 409.443 276.173 404.784 L 276.173 379.518 Z " fill="rgb(255,225,198)" />
+            <path d=" M 343.558 646.044 C 375.605 580.174 411.792 486.729 319.255 427.086 C 319.089 427.252 322.056 487.867 321.914 487.867 C 367.976 527.737 343.269 583.725 311.179 615.967 L 343.558 646.044 Z " fill="rgb(165,204,169)" />
+            <path d=" M 156.164 646.044 C 124.413 580.781 88.598 488.45 177.942 428.744 C 178.133 428.935 174.787 490.135 174.901 490.493 C 132.826 530.162 157.152 584.426 188.543 615.967 L 156.164 646.044 Z " fill="rgb(187,221,190)" />
+            <path d=" M 361.963 320.951 C 361.963 304.024 374.334 290.282 389.571 290.282 C 404.807 290.282 417.178 304.024 417.178 320.951 C 417.178 337.878 404.807 351.62 389.571 351.62 C 374.334 351.62 361.963 337.878 361.963 320.951 Z  M 82.822 320.951 C 82.822 304.024 95.193 290.282 110.429 290.282 C 125.666 290.282 138.037 304.024 138.037 320.951 C 138.037 337.878 125.666 351.62 110.429 351.62 C 95.193 351.62 82.822 337.878 82.822 320.951 Z " fill-rule="evenodd" fill="rgb(255,225,198)" />
+            <path d=" M 110.429 288.748 C 94.816 208.992 133.154 124.91 246.933 126.553 C 360.711 128.196 408.937 218.115 389.571 290.282 L 389.571 351.62 Q 300.083 398.328 246.933 397.624 Q 195.937 396.948 110.429 351.62 L 110.429 288.748 Z " fill="rgb(255,225,198)" />
+            <path d=" M 308.202 302.549 C 308.202 294.086 315.075 287.215 323.539 287.215 C 332.004 287.215 338.877 294.086 338.877 302.549 C 338.877 311.013 332.004 317.884 323.539 317.884 C 315.075 317.884 308.202 311.013 308.202 302.549 Z  M 159.509 302.549 C 159.509 294.086 166.382 287.215 174.847 287.215 C 183.312 287.215 190.184 294.086 190.184 302.549 C 190.184 311.013 183.312 317.884 174.847 317.884 C 166.382 317.884 159.509 311.013 159.509 302.549 Z " fill-rule="evenodd" fill="rgb(0,0,0)" />
+            <path d="M 250 331.685 L 250 331.685 C 286.399 331.685 315.951 349.55 315.951 371.555 L 315.951 371.555 L 315.951 371.555 L 184.049 371.555 L 184.049 371.555 L 184.049 371.555 C 184.049 349.55 213.601 331.685 250 331.685 Z" style="stroke:none;fill:#FFFEFF;stroke-miterlimit:10;" />
+            <path d=" M 217.791 327.085 C 217.791 309.312 232.224 294.882 250 294.882 C 267.776 294.882 282.209 309.312 282.209 327.085 C 282.209 344.858 267.776 359.287 250 359.287 C 232.224 359.287 217.791 344.858 217.791 327.085 Z " fill="rgb(255,225,198)" />
+            <path d=" M 258.124 380.499 C 256.564 383.387 253.51 385.356 250 385.356 C 246.49 385.356 243.436 383.387 241.876 380.499 C 244.14 381.631 246.956 382.289 250 382.289 C 253.044 382.289 255.86 381.631 258.124 380.499 Z " fill="rgb(249,122,122)" />
+            <path d=" M 309.536 267.827 L 308.202 268.519 L 309.536 269.903 L 308.202 271.136 C 319.762 275.589 330 275.575 338.877 271.136 L 337.543 269.789 L 338.877 268.877 L 337.543 267.827 L 338.877 267.135 C 329.096 272.469 318.885 272.456 308.202 267.135 L 309.536 267.827 Z  M 160.843 267.827 L 159.509 268.519 L 160.843 269.903 L 159.509 271.136 C 171.069 275.589 181.307 275.575 190.184 271.136 L 188.85 269.789 L 190.184 268.877 L 188.85 267.827 L 190.184 267.135 C 180.404 272.469 170.192 272.456 159.509 267.135 L 160.843 267.827 Z " fill-rule="evenodd" fill="rgb(0,0,0)" />
+            <path d=" M 367.98 71.225 C 354.587 62.483 349.035 29.56 343.815 26.654 C 333.375 20.844 326.355 36.731 314.228 32.573 C 298.352 27.131 292.916 1.959 274.249 0.019 C 265.338 -0.907 264.683 32.573 255.156 32.573 C 236.143 32.573 232.018 5.55 215.233 8.897 C 211.413 9.659 198.768 44.259 188.543 47.371 C 174.102 51.767 157.723 25.069 152.746 26.654 C 137.919 31.378 146.287 81.919 133.768 88.875 C 121.248 95.831 80.773 35.748 70.726 44.412 C 61.629 52.256 82.728 128.717 75.787 137.551 C 68.362 147.001 18.699 127.431 13.886 137.551 C 9.772 146.202 50.146 184.485 48.042 193.302 C 45.938 202.12 0 210.946 0 219.632 C 0 234.723 27.978 244.032 34.715 257.496 C 38.743 265.547 28.138 300.785 34.715 307.808 C 38.311 311.648 56.373 294.585 72.161 293.01 C 85.248 291.705 93.98 307.559 94.41 307.808 Q 108.348 294.832 139.226 257.496 L 177.047 276.852 L 207.194 213.104 L 260.579 241.466 L 296.657 204.225 L 314.228 267.813 L 367.98 257.496 L 388.809 304.66 Q 438.119 317.855 444.353 307.808 C 450.587 297.761 441.628 270.506 444.353 267.813 C 449.803 262.426 482.239 274.207 486.011 267.813 C 488.5 263.594 473.013 243.597 472.125 233.82 C 471.237 224.044 498.834 224.488 499.897 219.632 C 502.37 208.34 459.502 205.517 458.239 193.302 C 456.635 177.799 479.512 163.412 472.125 147.994 C 465.353 133.861 424.53 131.046 413.109 118.399 C 407.039 111.677 420.449 77.234 413.109 71.225 C 408.758 67.662 381.373 79.966 367.98 71.225 Z " fill="rgb(255,255,255)" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- holds the other svg elements we'll be mirroring -->
+      <div class="splitter-panel container">
+        <div class="categories fr">
+          <div class="category" 
+               data-trigger="face">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="neck">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="hair">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="eyes">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="nose">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="mouth">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="facial-hair">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="glasses">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="shirts">
+            &nbsp;
+          </div>
+          <div class="category" 
+               data-trigger="pants">
+            &nbsp;
+          </div>
+        </div>
+        <div class="assets">
+          <div class="asset" 
+               data-trigger="face">
+            &nbsp;
+          </div>
+          <div class="asset" 
+               data-trigger="neck">
+            &nbsp;
+          </div>
+          <div class="asset" 
+               data-trigger="hair">
+            &nbsp;
+          </div>
+          <div class="asset" 
+               data-trigger="eyes">
+            &nbsp;
+          </div>
+          <div class="asset" 
+               data-trigger="nose">
+            &nbsp;
+          </div>
+          <div class="asset" 
+               data-trigger="mouth">               
+            &nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- color picker -->
+    <div class="cp-holder cp-left">
+      <input type="text" class="picker" />
+    </div>
+
+    <!-- menu button -->
+    <div class="barscontainer">
+      <svg width="100px" height="100px">
+        <path id="first" d="M 30 40 L 70 40 C 90 40 90 75 60 85 A 40 40 0 0 1 20 20 L 80 80"></path>
+        <path id="middle" d="M 30 50 L 70 50"></path>
+         <path id="second" d="M 70 60 L 30 60 C 10 60 10 20 40 15 A 40 38 0 1 1 20 80 L 80 20"></path>
+    </svg>
+      <div class="barstrigger"></div>  
+    </div>
+    
+    <!-- menu dialog bg -->
+    <div class="menu" style="display: none;">
+      <button class="btn" 
+              data-design="random">
+        Random Design
+      </button>
+      <button class="btn png-export" 
+              data-action="export">
+        Export as PNG
+      </button>
+      <button class="btn svg-export" 
+              data-action="export">
+        Export as SVG
+      </button>
+      <button class="btn" 
+              data-action="switch-hands">
+        Switch to left handed
+      </button>
+    </div>
+    
+    <!-- donate dialog -->
+    <div class="donatebanner hide">
+      <div class="table">
+        <div class="cell">
+          <h2 style="margin-bottom: -1em; position: relative; z-index: 1;" data-language="donateheader">Your donation helps support the developer!</h2>
+          <img src="imgs/donate.svg" style="margin: auto; display: block;">
+
+          <div style="width: 357px; margin: -20px auto; display: inline-block;">
+            <a data-class="setexport" href="javascript:void(0)">
+              <img src="imgs/no.svg" style="float: left; height: 56px;">
+            </a>
+            <a data-class="setexport" href="https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&amp;cmd=_xclick&amp;amount=5.0&amp;item_name=Donation&amp;currency_code=USD" target="_blank">
+              <img src="imgs/yes.svg" style="float: right; height: 56px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/index.js"></script>
+  </body>
+</html>

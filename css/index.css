@@ -1,0 +1,190 @@
+/* css resets */
+@font-face {
+  font-family: Lato;
+  src: url("../libraries/font-awesome/Lato-Light.ttf");
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+/* Menu stuff */
+.barsmenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+  margin: 10px;
+  color: #fff;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #c4c7ca;
+  background: rgba(0, 0, 0, 0.17);
+  text-align: center;
+/*  overflow: auto;*/
+  overflow: hidden;
+}
+.menu .btn {
+/*  display: block;*/
+  width: calc(100vw - 6em);
+  height: calc(100vh / 4 - 6px);
+  margin: 5px auto;
+  color: #000;
+  background: #e7f0f5;
+  border: 1px solid #b3b3b3;
+}
+
+/* animated burger menu from - https://codepen.io/JenyaNem/pen/MvqGKJ?editors=0010 */
+.barscontainer {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  right: -50px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.barscontainer svg path, 
+.barscontainer svg line {
+    stroke: #fff;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    fill: none;
+    transition: 0.2s;
+}
+.barstrigger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 5;
+  top: 0;
+  left: 0;
+}
+
+/* color picker placement */
+.cp-holder {
+  position: absolute;
+  bottom: 0;
+  background: #688c57;
+}
+.cp-left {
+  left: 0;
+  border-radius: 0 100% 0 0;
+}
+.cp-right {
+  right: 0;
+  border-radius: 100% 0 0 0;
+}
+.cp-holder.cp-right .minicolors-theme-default .minicolors-input {
+  width: 143px;
+}
+
+/* character background */
+.viewer {
+  background: #688c57;
+  text-align: center;
+}
+.viewer svg {
+  margin: 1em;
+  width: 100%;
+  height: calc(100% - 2em);
+}
+
+/* category styles like face, nose, etc: */
+.categories {
+  width: 128px;
+  height: 100%;
+  overflow: auto;
+  border: 1px solid #d1d1d1;
+  border-top: 0;
+  border-bottom: 0;
+}
+.category {
+  cursor: pointer;
+  display: block;
+  height: 100px;
+  margin: 5px;
+  border-bottom: 1px solid #d1d1d1;
+  background: #fff;
+}
+
+/* assets styles for categories like face */
+.assets {
+  text-align: center;
+  height: 100%;
+  overflow: auto;
+}
+.asset {
+  cursor: pointer;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 5px 0 5px 5px;
+  border: 1px solid #d1d1d1;
+  background: #fff;
+}
+
+/* for donate dialog */
+.donatebanner {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: #ebfff1;
+  z-index: 2;
+}
+.donatebanner h2 {
+  color: #999da1;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-size: 1.5em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* Center content horizontally and vertically */
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* global classes */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.hide {
+  display: none;
+}
+.pointer {
+  cursor: pointer;
+}
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
