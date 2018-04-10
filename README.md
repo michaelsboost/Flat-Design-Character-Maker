@@ -34,7 +34,12 @@ Flat Design Character Maker uses a number of open source projects to work proper
 * [FabricJS](http://fabricjs.com/) - Converts SVG to PNG
 * [FileSaver.js](https://github.com/eligrey/FileSaver.js/) - Easy way to save files
 * [Alertify](http://alertifyjs.com/) - Stylish alert dialog
-* [SweetAlert2](sweetalert2.github.io) - Other stylish alert dialog
+* [SweetAlert2](https://sweetalert2.github.io/) - Other stylish alert dialog
+
+
+Design
+-------------
+* Currently all the characters were designed by [Michael Schwartz](http://michaelsboost.github.io/) using [Gravit Designer](https://designer.io/).
 
 To-Do
 -------------
