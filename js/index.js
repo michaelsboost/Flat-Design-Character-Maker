@@ -60,6 +60,79 @@ var open = false,
       }
     };
 
+// change categories
+$(".categories .category").on("click", function() {
+  // check if this category is already active
+  if ($(this).hasClass("active")) {
+    return false;
+  }
+  
+  // hide all other categories except the new active
+  $(".categories .category").removeClass("active");
+  $(this).addClass("active");
+  $(".feature[data-display]").hide();
+  $(".feature[data-trigger]").hide();
+
+  // check if this is background category or not
+  if($(this).hasClass("background")) {
+    $(".feature[data-trigger="+ $(this).attr("data-call") +"]").show();
+   } else {
+    $(".feature[data-display="+ $(this).attr("data-call") +"]").show();
+   }
+});
+
+// generate a random character
+$("[data-design=random]").click(function() {
+  alertify.message("coming soon...");
+  
+  // close menu
+  $(".barstrigger").trigger("click");
+});
+
+// save button file dialog
+$("[data-class=setexport]").change(function() {
+  // save as svg image
+  $(".svg-export[data-class=setexport]").click(function() {
+    $(".donatebanner").fadeOut();
+    
+    alertify.prompt("File name & type below!", "",
+    function(evt, value) {
+      blob = new Blob([ $(".viewer").html() ], {type: "text/html"});
+      saveAs(blob, value + ".svg");
+
+      swal(
+        'Yay!',
+        'You\'re was character successfully saved!',
+        'success'
+      );
+    },
+    function() {
+      // User clicked cancel
+    }).set('basic', true);
+  });
+  
+  // save as png image
+  $(".png-export[data-class=setexport]").click(function() {
+    $(".donatebanner").fadeOut();
+    
+    alertify.prompt("File name & type below!", "",
+    function(evt, value) {
+      saveAsPNG(value + ".png");
+
+      swal(
+        'Yay!',
+        'You\'re was character successfully saved!',
+        'success'
+      );
+    },
+    function() {
+      // User clicked cancel
+    }).set('basic', true);
+  });
+  
+  return false;
+});
+
 // hamburger menu settings
 Moveit.put(first, {
     start: '0%',
@@ -157,14 +230,6 @@ $('#mainSplitter').jqxSplitter({
            { size: "50%" }]
 });
 
-// generate a random character
-$("[data-design=random]").click(function() {
-  alertify.message("coming soon...");
-  
-  // close menu
-  $(".barstrigger").trigger("click");
-});
-
 // open donate dialog
 $("[data-action=export]").click(function() {
   
@@ -176,50 +241,6 @@ $("[data-action=export]").click(function() {
 
   // close menu
   $(".barstrigger").trigger("click");
-});
-
-// save button file dialog
-$("[data-class=setexport]").change(function() {
-  // save as svg image
-  $(".svg-export[data-class=setexport]").click(function() {
-    $(".donatebanner").fadeOut();
-    
-    alertify.prompt("File name & type below!", "",
-    function(evt, value) {
-      blob = new Blob([ $(".viewer").html() ], {type: "text/html"});
-      saveAs(blob, value + ".svg");
-
-      swal(
-        'Yay!',
-        'You\'re was character successfully saved!',
-        'success'
-      );
-    },
-    function() {
-      // User clicked cancel
-    }).set('basic', true);
-  });
-  
-  // save as png image
-  $(".png-export[data-class=setexport]").click(function() {
-    $(".donatebanner").fadeOut();
-    
-    alertify.prompt("File name & type below!", "",
-    function(evt, value) {
-      saveAsPNG(value + ".png");
-
-      swal(
-        'Yay!',
-        'You\'re was character successfully saved!',
-        'success'
-      );
-    },
-    function() {
-      // User clicked cancel
-    }).set('basic', true);
-  });
-  
-  return false;
 });
 
 // switch hands button clicked
