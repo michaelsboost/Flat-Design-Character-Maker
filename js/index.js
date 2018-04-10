@@ -118,7 +118,8 @@ $('.barstrigger').click(function() {
 
 // resizable container
 $('#mainSplitter').jqxSplitter({
-  width: "100%",
+//  width: "calc(100% - 1px)",
+  width: "auto",
   height: "100%",
   orientation: 'horizontal',
   panels: [{ size: "50%",collapsible:false },
