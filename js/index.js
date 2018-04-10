@@ -58,10 +58,31 @@ var open = false,
           });
         }
       }
+      if ( localStorage.getItem("rememberCategory")) {
+        var rememberedClass = $(".categories .category." + localStorage.getItem("rememberCategory"));
+        
+        // hide all other categories except the new active
+        $(".categories .category").removeClass("active");
+
+        // revert back to previous category
+        rememberedClass.addClass("active");
+        $(".feature[data-display]").hide();
+        $(".feature[data-trigger]").hide();
+
+        // check and see of category is background or not
+        if ( localStorage.getItem("rememberCategory") === "background" ) {
+          $(".feature[data-trigger="+ rememberedClass.attr("data-call") +"]").show();
+         } else {
+          $(".feature[data-display="+ rememberedClass.attr("data-call") +"]").show();
+         }
+      }
     };
 
 // change categories
 $(".categories .category").on("click", function() {
+  // save active category
+  localStorage.setItem("rememberCategory", $(this).attr("data-call"));
+  
   // check if this category is already active
   if ($(this).hasClass("active")) {
     return false;
