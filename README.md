@@ -3,6 +3,8 @@ Flat Design Character Maker
 
 Just a simple flat design vector based character designer.
 
+![](https://raw.githubusercontent.com/michaelsboost/Flat-Design-Character-Maker/gh-pages/screenshot.png)
+
 Version
 -------------
 
