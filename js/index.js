@@ -1,6 +1,6 @@
 var open = false,
-    duration = 0.3,
-    timing   = 'cubic-bezier(0.7, 0, 0.3, 1)',
+    duration  = 0.3,
+    timing    = 'cubic-bezier(0.7, 0, 0.3, 1)',
     saveAsPNG = function(value) {
       var canvas = new fabric.StaticCanvas('canvas');
       canvas.clear();
@@ -27,6 +27,37 @@ var open = false,
         style: 'display: none',
       });
       document.body.appendChild(iframe);
+    },
+    initializeLocalStorage = function() {
+      if ( localStorage.getItem("SVGBGColor")) {
+        $(".picker").val(localStorage.getItem("SVGBGColor")).trigger('change');
+      }
+      if ( localStorage.getItem("checkHands")) {
+        // detect ui left or right handed
+        if ( localStorage.getItem("checkHands") === "leftHanded" ) {
+          // switch to left handed
+          $(".cp-holder").addClass("cp-right");
+          $(".cp-holder").removeClass("cp-left");
+
+          $(".categories").addClass("fl");
+          $(".categories").removeClass("fr");
+
+          $('.picker').minicolors({
+            position: 'top right'
+          });
+        } else {
+          // switch to right handed
+          $(".cp-holder").addClass("cp-left");
+          $(".cp-holder").removeClass("cp-right");
+
+          $(".categories").addClass("fr");
+          $(".categories").removeClass("fl");
+
+          $('.picker').minicolors({
+            position: 'top left'
+          });
+        }
+      }
     };
 
 // hamburger menu settings
@@ -195,6 +226,8 @@ $("[data-class=setexport]").change(function() {
 $("[data-action=switch-hands]").click(function() {
   // detect ui left or right handed
   if ( $(".cp-holder").hasClass("cp-left") ) {
+    localStorage.setItem("checkHands", "leftHanded");
+    
     // switch to left handed
     $(".cp-holder").addClass("cp-right");
     $(".cp-holder").removeClass("cp-left");
@@ -206,6 +239,8 @@ $("[data-action=switch-hands]").click(function() {
       position: 'top right'
     });
   } else {
+    localStorage.setItem("checkHands", "rightHanded");
+
     // switch to right handed
     $(".cp-holder").addClass("cp-left");
     $(".cp-holder").removeClass("cp-right");
@@ -235,8 +270,13 @@ $('.picker').minicolors({
 // sets the background color
 $('.picker').on("change", function() {
   $(".background").not(".feature.background").css('background', this.value);
+  
+  localStorage.setItem("SVGBGColor", this.value);
 });
 $(".background").not(".feature.background").css('background', $('.picker').val());
+
+// save design via localStorage
+initializeLocalStorage();
 
 // save svg as png test
 // saveAsPNG("test.png");

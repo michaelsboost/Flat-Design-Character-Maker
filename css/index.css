@@ -105,7 +105,7 @@ h2 {
   text-align: center;
 }
 .viewer svg {
-  margin: 1em;
+  margin: 1em auto;
   width: 100%;
   height: calc(100% - 2em);
 }
