@@ -83,7 +83,7 @@ var defaultColor = "#fffde8",
       }
     },
     rememberDesign = function() {
-      localStorage.setItem("rememberDesign", $(".viewer").html());
+      // localStorage.setItem("rememberDesign", $(".viewer").html());
     },
     appendPicker = function() {
       // some categories do not need color picker
@@ -170,7 +170,11 @@ $(".categories .category").on("click", function() {
 
 // change character attributes
 $(".asset").on("click", function() {
-  $(".viewer #character #" + $("[data-target]").attr("data-target")).html($(this).find("g#change").html());
+  if ($("[data-call=body-types]").hasClass("active")) {
+    $(".viewer #character #" + $("[data-target]").attr("data-target")).html($(this).find("g#change").html());
+  } else {
+    $(".viewer #character #head #" + $(".active[data-call]").attr("data-call")).html($(this).find("g#change").html());
+  }
   
   rememberDesign();
 });
