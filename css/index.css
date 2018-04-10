@@ -142,6 +142,9 @@ h2 {
 .categories .front-hair {
   background-image: url('../categories/front-hair.svg');
 }
+.categories .ears {
+  background-image: url('../categories/ears.svg');
+}
 .categories .eyes {
   background-image: url('../categories/eyes.svg');
 }

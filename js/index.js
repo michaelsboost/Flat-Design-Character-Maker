@@ -83,7 +83,7 @@ var defaultColor = "#fffde8",
       }
     },
     rememberDesign = function() {
-      // localStorage.setItem("rememberDesign", $(".viewer").html());
+      localStorage.setItem("rememberDesign", $(".viewer").html());
     },
     appendPicker = function() {
       // some categories do not need color picker
