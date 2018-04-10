@@ -122,63 +122,49 @@ h2 {
 .category {
   cursor: pointer;
   display: block;
-  height: 100px;
+  width: 108px;
+  height: 108px;
   margin: 5px;
   border-bottom: 1px solid #d1d1d1;
   background: #fff;
+  background-size: cover;
 }
 
-.categories .head {
+.categories .face {
   background-image: url('../categories/head.svg');
-  background-size: cover;
 }
 .categories .neck {
   background-image: url('../categories/neck.svg');
-  background-size: cover;
 }
 .categories .hair {
   background-image: url('../categories/hair.svg');
-  background-size: cover;
 }
 .categories .front-hair {
   background-image: url('../categories/front-hair.svg');
-  background-size: cover;
 }
 .categories .eyes {
   background-image: url('../categories/eyes.svg');
-  background-size: cover;
 }
 .categories .eyebrows {
   background-image: url('../categories/eyebrows.svg');
-  background-size: cover;
 }
 .categories .nose {
   background-image: url('../categories/nose.svg');
-  background-size: cover;
 }
 .categories .mouth {
   background-image: url('../categories/mouth.svg');
-  background-size: cover;
 }
 .categories .facial-hair {
   background-image: url('../categories/facial-hair.svg');
-  background-size: cover;
 }
 .categories .glasses {
   background-image: url('../categories/glasses.svg');
-  background-size: cover;
-}
-.categories .shirt {
-  background-image: url('../categories/shirt.svg');
-  background-size: cover;
-}
-.categories .pants {
-  background-image: url('../categories/pants.svg');
-  background-size: cover;
 }
 .categories .shoes {
   background-image: url('../categories/shoes.svg');
-  background-size: cover;
+}
+.categories .body-types {
+  background-image: url('../categories/body-types.svg');
 }
 
 /* assets styles for categories like face */
@@ -190,6 +176,7 @@ h2 {
 .feature, .assets {
   display: inline-block;
 }
+.feature.shoes,
 .feature.background {
   width: 100%;
   height: calc(100% - 3px);
@@ -198,10 +185,13 @@ h2 {
   cursor: pointer;
   display: inline-block;
   width: 100px;
-  height: 100px;
   margin: 5px 0 5px 5px;
   border: 1px solid #d1d1d1;
   background: #fff;
+}
+.asset svg {
+  width: 100px;
+  height: auto;
 }
 
 /* for donate dialog */

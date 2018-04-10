@@ -1,4 +1,5 @@
-var open = false,
+var defaultColor = "#fffde8",
+    open = false,
     duration  = 0.3,
     timing    = 'cubic-bezier(0.7, 0, 0.3, 1)',
     saveAsPNG = function(value) {
@@ -30,7 +31,7 @@ var open = false,
     },
     initializeLocalStorage = function() {
       if ( localStorage.getItem("SVGBGColor")) {
-        $(".picker").val(localStorage.getItem("SVGBGColor")).trigger('change');
+        $(".background").not(".feature.background").css('background', localStorage.getItem("SVGBGColor"));
       }
       if ( localStorage.getItem("checkHands")) {
         // detect ui left or right handed
@@ -75,6 +76,67 @@ var open = false,
          } else {
           $(".feature[data-display="+ rememberedClass.attr("data-call") +"]").show();
          }
+        appendPicker();
+      }
+      if ( localStorage.getItem("rememberDesign")) {
+        $(".viewer").html(localStorage.getItem("rememberDesign"));
+      }
+    },
+    rememberDesign = function() {
+      localStorage.setItem("rememberDesign", $(".viewer").html());
+    },
+    appendPicker = function() {
+      // some categories do not need color picker
+      if ($(".body-types, .glasses, .eyes, .mouth").hasClass("active")) {
+        $('.cp-holder').empty();
+        return false;
+      }
+      
+      // add color picker to dom
+      $('.cp-holder').empty().append('<input type="text" class="picker" data-opacty="1">');
+      
+      // detect if background is active
+      if ($(".background").hasClass("active")) {
+        defaultColor = tinycolor($(".background").css("background-color"));
+        defaultColor = defaultColor.toHexString();
+
+        $('.picker').val(defaultColor).minicolors({
+          format: 'hex',
+          defaultValue: this.value,
+          position: 'top left',
+          change: function(value, opacity) {
+            if ($(".background").hasClass("active")) {            $(".background").not(".feature.background").css('background', this.value);
+              localStorage.setItem("SVGBGColor", this.value);
+              rememberDesign();
+            }
+          }
+        });
+      }
+      // detect if shoes is active
+      else if ($(".shoes").hasClass("active")) {
+        $('.picker').val($(".viewer svg #shoes path").attr('fill')).minicolors({
+          format: 'rgb',
+          defaultValue: this.value,
+          opacity: true,
+          position: 'top left',
+          change: function(value, opacity) {
+            $(".viewer svg #shoes path").attr('fill', this.value);
+            rememberDesign();
+          }
+        });
+      } else {
+        $('.picker').val($(".viewer svg #head #"+ $(".active[data-call]").attr("data-call") +" path").attr('fill')).minicolors({
+          format: 'rgb',
+          defaultValue: this.value,
+          opacity: true,
+          position: 'top left',
+          change: function(value, opacity) {
+            if ($("[data-call]").hasClass("active")) {
+              $(".viewer svg #head #"+ $(".active[data-call]").attr("data-call") +" path").attr('fill', this.value);
+              rememberDesign();
+            }
+          }
+        });
       }
     };
 
@@ -97,9 +159,20 @@ $(".categories .category").on("click", function() {
   // check if this is background category or not
   if($(this).hasClass("background")) {
     $(".feature[data-trigger="+ $(this).attr("data-call") +"]").show();
+    $()
    } else {
     $(".feature[data-display="+ $(this).attr("data-call") +"]").show();
    }
+  
+  // color picker should only be visible for some attributes
+  appendPicker();
+});
+
+// change character attributes
+$(".asset").on("click", function() {
+  $(".viewer #character #" + $("[data-target]").attr("data-target")).html($(this).find("g#change").html());
+  
+  rememberDesign();
 });
 
 // generate a random character
@@ -300,22 +373,7 @@ $("[data-action=switch-hands]").click(function() {
 });
 
 // sets the color picker
-$('.picker').minicolors({
-  format: 'hex',
-  defaultValue: "#f3fff1",
-  position: 'top left',
-  change: function(value, opacity) {
-    
-  }
-});
-
-// sets the background color
-$('.picker').on("change", function() {
-  $(".background").not(".feature.background").css('background', this.value);
-  
-  localStorage.setItem("SVGBGColor", this.value);
-});
-$(".background").not(".feature.background").css('background', $('.picker').val());
+appendPicker();
 
 // save design via localStorage
 initializeLocalStorage();
