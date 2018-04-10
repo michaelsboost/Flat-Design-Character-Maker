@@ -73,7 +73,7 @@ $('.barstrigger').click(function() {
           delay: 0,
           timing: timing
       });
-      $(".barscontainer svg path, .barscontainer svg line").css({'stroke': 'black'});
+      // $(".barscontainer svg path, .barscontainer svg line").css({'stroke': 'black'});
       
       $(".menu .btn").delay().slideDown(300);
       $(".menu").fadeIn(300);
@@ -108,7 +108,7 @@ $('.barstrigger').click(function() {
           delay: 0,
           timing: timing
       });
-    $(".barscontainer svg path, .barscontainer svg line").css({'stroke': 'white'});
+    // $(".barscontainer svg path, .barscontainer svg line").css({'stroke': 'white'});
 
     $(".menu .btn").fadeOut();
     $(".menu").fadeOut();
@@ -224,12 +224,18 @@ $("[data-action=switch-hands]").click(function() {
 // sets the color picker
 $('.picker').minicolors({
   format: 'hex',
-  defaultValue: "#688c57",
+  defaultValue: "#f3fff1",
   position: 'top left',
   change: function(value, opacity) {
     
   }
 });
+
+// sets the background color
+$('.picker').on("change", function() {
+  $(".background").not(".feature.background").css('background', this.value);
+});
+$(".background").not(".feature.background").css('background', $('.picker').val());
 
 // save svg as png test
 // saveAsPNG("test.png");

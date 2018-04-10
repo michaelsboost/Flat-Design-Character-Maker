@@ -13,6 +13,13 @@ html, body {
 a {
   text-decoration: none;
 }
+h2 {
+  color: #999da1;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-size: 1.5em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 /* Menu stuff */
 .barsmenu {
@@ -57,7 +64,8 @@ a {
 }
 .barscontainer svg path, 
 .barscontainer svg line {
-    stroke: #fff;
+    /* stroke: #fff; */
+    stroke: #000;
     stroke-width: 6px;
     stroke-linecap: round;
     fill: none;
@@ -93,7 +101,7 @@ a {
 
 /* character background */
 .viewer {
-  background: #688c57;
+  background: #f3fff1;
   text-align: center;
 }
 .viewer svg {
@@ -120,11 +128,71 @@ a {
   background: #fff;
 }
 
+.categories .head {
+  background-image: url('../categories/head.svg');
+  background-size: cover;
+}
+.categories .neck {
+  background-image: url('../categories/neck.svg');
+  background-size: cover;
+}
+.categories .hair {
+  background-image: url('../categories/hair.svg');
+  background-size: cover;
+}
+.categories .front-hair {
+  background-image: url('../categories/front-hair.svg');
+  background-size: cover;
+}
+.categories .eyes {
+  background-image: url('../categories/eyes.svg');
+  background-size: cover;
+}
+.categories .eyebrows {
+  background-image: url('../categories/eyebrows.svg');
+  background-size: cover;
+}
+.categories .nose {
+  background-image: url('../categories/nose.svg');
+  background-size: cover;
+}
+.categories .mouth {
+  background-image: url('../categories/mouth.svg');
+  background-size: cover;
+}
+.categories .facial-hair {
+  background-image: url('../categories/facial-hair.svg');
+  background-size: cover;
+}
+.categories .glasses {
+  background-image: url('../categories/glasses.svg');
+  background-size: cover;
+}
+.categories .shirt {
+  background-image: url('../categories/shirt.svg');
+  background-size: cover;
+}
+.categories .pants {
+  background-image: url('../categories/pants.svg');
+  background-size: cover;
+}
+.categories .shoes {
+  background-image: url('../categories/shoes.svg');
+  background-size: cover;
+}
+
 /* assets styles for categories like face */
-.assets {
+.features {
   text-align: center;
   height: 100%;
   overflow: auto;
+}
+.feature, .assets {
+  display: inline-block;
+}
+.feature.background {
+  width: 100%;
+  height: calc(100% - 3px);
 }
 .asset {
   cursor: pointer;
@@ -146,13 +214,7 @@ a {
   background: #ebfff1;
   z-index: 2;
 }
-.donatebanner h2 {
-  color: #999da1;
-  letter-spacing: 1px;
-  font-weight: 100;
-  font-size: 1.5em;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+
 /* Center content horizontally and vertically */
 .table {
   display: table;
