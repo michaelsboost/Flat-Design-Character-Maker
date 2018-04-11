@@ -254,14 +254,6 @@ $("#translateyrange").on("change", function() {
   $("#translateyadj").val(this.value).trigger("change");
 });
 
-// generate a random character
-$("[data-design=random]").click(function() {
-  alertify.message("coming soon...");
-  
-  // close menu
-  $(".barstrigger").trigger("click");
-});
-
 // save button file dialog
 $("[data-class=setexport]").change(function() {
   // save as svg image
