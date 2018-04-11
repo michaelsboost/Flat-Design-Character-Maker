@@ -142,6 +142,12 @@ var defaultColor = "#fffde8",
           }
         });
       }
+    },
+    openInNewTab = function(url) {
+      var a = document.createElement("a");
+      a.target = "_blank";
+      a.href = url;
+      a.click();
     };
 
 // change categories
