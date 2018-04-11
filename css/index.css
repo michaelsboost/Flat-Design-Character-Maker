@@ -99,6 +99,39 @@ h2 {
   width: 143px;
 }
 
+/* move settings */
+.move-holder {
+  position: absolute;
+  top: 0;
+/*  background: #688c57;*/
+  font-size: 2em;
+  margin-left: 5px;
+  color: #666;
+  z-index: 1;
+}
+.settings-panel {
+  text-align: left;
+  padding-left: 25px;
+  height: calc(100% - 3px);
+}
+.settings-panel h2 {
+  text-align: left;
+}
+.settings-panel h2 input[type=number] {
+  width: calc(100% / 1.5);
+}
+.settings-panel input[type=range] {
+  width: calc(100vw - 200px);
+  padding: 0;
+  display: block;
+  margin: auto;
+}
+@media all and (max-width: 560px) {
+  .settings-panel h2 input[type=number] {
+    width: calc(100% - 6px);
+  }
+}
+
 /* character background */
 .viewer {
   background: #f3fff1;
@@ -130,8 +163,11 @@ h2 {
   background-size: cover;
 }
 
-.categories .face {
+.categories .head {
   background-image: url('../categories/head.svg');
+}
+.categories .face {
+  background-image: url('../categories/face.svg');
 }
 .categories .neck {
   background-image: url('../categories/neck.svg');
@@ -179,7 +215,7 @@ h2 {
 .feature, .assets {
   display: inline-block;
 }
-.feature.shoes,
+.feature.head,
 .feature.background {
   width: 100%;
   height: calc(100% - 3px);

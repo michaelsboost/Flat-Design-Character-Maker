@@ -73,8 +73,10 @@ var defaultColor = "#fffde8",
         // check and see of category is background or not
         if ( localStorage.getItem("rememberCategory") === "background" ) {
           $(".feature[data-trigger="+ rememberedClass.attr("data-call") +"]").show();
+          $(".move-holder").hide();
          } else {
           $(".feature[data-display="+ rememberedClass.attr("data-call") +"]").show();
+          $(".move-holder").show();
          }
         appendPicker();
       }
@@ -87,7 +89,7 @@ var defaultColor = "#fffde8",
     },
     appendPicker = function() {
       // some categories do not need color picker
-      if ($(".body-types, .glasses, .eyes, .mouth").hasClass("active")) {
+      if ($(".body-types, .glasses, .eyes, .mouth, .head").hasClass("active")) {
         $('.cp-holder').empty();
         return false;
       }
@@ -114,14 +116,16 @@ var defaultColor = "#fffde8",
       }
       // detect if shoes is active
       else if ($(".shoes").hasClass("active")) {
-        $('.picker').val($(".viewer svg #shoes path").attr('fill')).minicolors({
+        $('.picker').val($(".viewer svg #"+ $(".active[data-call]").attr("data-call") +" path").attr('fill')).minicolors({
           format: 'rgb',
           defaultValue: this.value,
           opacity: true,
           position: 'top left',
           change: function(value, opacity) {
-            $(".viewer svg #shoes path").attr('fill', this.value);
-            rememberDesign();
+            if ($("[data-call]").hasClass("active")) {
+              $(".viewer svg #"+ $(".active[data-call]").attr("data-call") +" path").attr('fill', this.value);
+              rememberDesign();
+            }
           }
         });
       } else {
@@ -149,6 +153,7 @@ $(".categories .category").on("click", function() {
   if ($(this).hasClass("active")) {
     return false;
   }
+  $("[data-toggle=settings-panel]").hide();
   
   // hide all other categories except the new active
   $(".categories .category").removeClass("active");
@@ -159,9 +164,10 @@ $(".categories .category").on("click", function() {
   // check if this is background category or not
   if($(this).hasClass("background")) {
     $(".feature[data-trigger="+ $(this).attr("data-call") +"]").show();
-    $()
+    $(".move-holder").hide();
    } else {
     $(".feature[data-display="+ $(this).attr("data-call") +"]").show();
+    $(".move-holder").show();
    }
   
   // color picker should only be visible for some attributes
@@ -172,11 +178,80 @@ $(".categories .category").on("click", function() {
 $(".asset").on("click", function() {
   if ($("[data-call=body-types]").hasClass("active")) {
     $(".viewer #character #" + $("[data-target]").attr("data-target")).html($(this).find("g#change").html());
+  } else if ($("[data-call=shoes]").hasClass("active")) {
+    $(".viewer #character #" + $(".active[data-call]").attr("data-call")).html($(this).find("g#change").html());
   } else {
     $(".viewer #character #head #" + $(".active[data-call]").attr("data-call")).html($(this).find("g#change").html());
   }
   
   rememberDesign();
+  appendPicker();
+});
+
+// Toggle scale and position `settings-panel`
+$("[data-call=settings-panel]").click(function() {
+  var category = $(".categories .category.active").attr("data-call");
+  
+  if ( $(".feature." + category).is(":visible") ) {
+    $(".feature." + category).hide();
+    $("[data-toggle=settings-panel]").show();
+  } else {
+    $(".feature." + category).show();
+    $("[data-toggle=settings-panel]").hide();
+  }
+});
+
+// adjust scale and position of character attributes
+$("#scaleadj").on("change", function() {
+  if(!$(this).hasClass("background")) {
+    if ($("[data-call=body-types]").hasClass("active")) {
+      $(".viewer #character #" + $("[data-target]").attr("data-target")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else if ($("[data-call=shoes]").hasClass("active")) {
+      $(".viewer #character #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else if ($("[data-call=head]").hasClass("active")) {
+      $(".viewer #character #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else {
+      $(".viewer #character #head #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    }
+  }
+  rememberDesign();
+});
+$("#translatexadj").on("change", function() {
+  if(!$(this).hasClass("background")) {
+    if ($("[data-call=body-types]").hasClass("active")) {
+      $(".viewer #character #" + $("[data-target]").attr("data-target")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else if ($("[data-call=shoes]").hasClass("active")) {
+      $(".viewer #character #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else if ($("[data-call=head]").hasClass("active")) {
+      $(".viewer #character #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else {
+      $(".viewer #character #head #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    }
+  }
+  rememberDesign();
+});
+$("#translateyadj").on("change", function() {
+  if(!$(this).hasClass("background")) {
+    if ($("[data-call=body-types]").hasClass("active")) {
+      $(".viewer #character #" + $("[data-target]").attr("data-target")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else if ($("[data-call=shoes]").hasClass("active")) {
+      $(".viewer #character #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else if ($("[data-call=head]").hasClass("active")) {
+      $(".viewer #character #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    } else {
+      $(".viewer #character #head #" + $(".active[data-call]").attr("data-call")).attr("transform", "scale("+ $("#scaleadj").val() +") translate("+ $("#translatexadj").val() +", "+ $("#translateyadj").val() +")");
+    }
+  }
+  rememberDesign();
+});
+$("#scalerange").on("change", function() {
+  $("#scaleadj").val(this.value).trigger("change");
+});
+$("#translatexrange").on("change", function() {
+  $("#translatexadj").val(this.value).trigger("change");
+});
+$("#translateyrange").on("change", function() {
+  $("#translateyadj").val(this.value).trigger("change");
 });
 
 // generate a random character
