@@ -52,6 +52,10 @@ Development
 
 Want to contribute? Great!  
 
+I posted a video on YouTube showing you exactly how you can add a feature design (like front-hair, facial hair, eyes, body-types, etc:) to the application.
+
+You can watch that video here - https://www.youtube.com/watch?v=8zpcx4210IE
+
 The Flat Design Character Maker is no longer an active project however you can submit a pull request or simply share the project :)
 
 Of course the app is free and open source, so you can always fork the project and have fun :)
