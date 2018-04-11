@@ -18,7 +18,7 @@ MIT
 Availability
 -------------
 
-Currently this app is only available as a web application.
+Currently, this app is only available as a web application.
 
 If you want this as a desktop application you can use
 [WebDGap](http://michaelsboost.github.io/WebDGap)  
@@ -52,7 +52,7 @@ Development
 
 Want to contribute? Great!  
 
-You can submit a pull request or simply share the project :)
+The Flat Design Character Maker is no longer an active project however you can submit a pull request or simply share the project :)
 
 Of course the app is free and open source, so you can always fork the project and have fun :)
 
