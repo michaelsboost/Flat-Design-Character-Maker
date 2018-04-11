@@ -41,6 +41,7 @@ h2 {
   text-align: center;
 /*  overflow: auto;*/
   overflow: hidden;
+  z-index: 1;
 }
 .menu .btn {
 /*  display: block;*/
@@ -60,16 +61,16 @@ h2 {
   top: 50px;
   right: -50px;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 2;
 }
 .barscontainer svg path, 
 .barscontainer svg line {
-    /* stroke: #fff; */
-    stroke: #000;
-    stroke-width: 6px;
-    stroke-linecap: round;
-    fill: none;
-    transition: 0.2s;
+  /* stroke: #fff; */
+  stroke: #000;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  fill: none;
+  transition: 0.2s;
 }
 .barstrigger {
   position: absolute;
@@ -79,6 +80,28 @@ h2 {
   z-index: 5;
   top: 0;
   left: 0;
+}
+
+/* reload button */
+.reload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 30px;
+  font-size: 2em;
+}
+.reload img {
+  width: 50px;
+}
+
+/* make menu buttons smaller on phones */
+@media all and (max-width: 360px) {
+  .barscontainer, .reload {
+    transform: translate(-50%, -50%) scale(.5);
+  }
+  .barscontainer {
+    margin: -25px;
+  }
 }
 
 /* color picker placement */

@@ -33,7 +33,6 @@ Flat Design Character Maker uses a number of open source projects to work proper
 * [JQuery Mini Colors](https://labs.abeautifulsite.net/jquery-minicolors/) - color picker
 * [FabricJS](http://fabricjs.com/) - Converts SVG to PNG
 * [FileSaver.js](https://github.com/eligrey/FileSaver.js/) - Easy way to save files
-* [Alertify](http://alertifyjs.com/) - Stylish alert dialog
 * [SweetAlert2](https://sweetalert2.github.io/) - Other stylish alert dialog
 * [TinyColor](https://github.com/bgrins/TinyColor) - converts color codes
 

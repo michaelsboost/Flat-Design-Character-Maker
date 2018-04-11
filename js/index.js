@@ -266,20 +266,31 @@ $("[data-class=setexport]").change(function() {
   $(".svg-export[data-class=setexport]").click(function() {
     $(".donatebanner").fadeOut();
     
-    alertify.prompt("File name & type below!", "",
-    function(evt, value) {
-      blob = new Blob([ $(".viewer").html() ], {type: "text/html"});
-      saveAs(blob, value + ".svg");
+    swal({
+      title: 'File name below!',
+      input: 'text',
+      inputPlaceholder: ".svg is added on save",
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      showLoaderOnConfirm: true
+    }).then((result) => {
+      if (result.value) {
+        blob = new Blob([ $(".viewer").html() ], {type: "text/html"});
+        saveAs(blob, value + ".svg");
 
-      swal(
-        'Yay!',
-        'You\'re was character successfully saved!',
-        'success'
-      );
-    },
-    function() {
-      // User clicked cancel
-    }).set('basic', true);
+        swal(
+          'Yay!',
+          'You\'re was character successfully saved!',
+          'success'
+        );
+      } else {
+        swal(
+          'Oops!',
+          console.error().toString(),
+          'error'
+        );
+      }
+    });
   });
   
   // save as png image
@@ -447,6 +458,21 @@ $("[data-action=switch-hands]").click(function() {
   
   // close menu
   $(".barstrigger").trigger("click");
+});
+
+// clear saved character
+$("[data-revert=design]").click(function() {
+  swal({
+    title: 'Revert to default design?',
+    text: "You won't be able to revert this!",
+    type: 'warning',
+    showCancelButton: true
+  }).then((result) => {
+    if (result.value) {
+      localStorage.clear("rememberDesign");
+      location.reload(true);
+    }
+  })
 });
 
 // sets the color picker
