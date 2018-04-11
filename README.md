@@ -35,7 +35,7 @@ Flat Design Character Maker uses a number of open source projects to work proper
 * [FileSaver.js](https://github.com/eligrey/FileSaver.js/) - Easy way to save files
 * [Alertify](http://alertifyjs.com/) - Stylish alert dialog
 * [SweetAlert2](https://sweetalert2.github.io/) - Other stylish alert dialog
-* [TinyColor]https://github.com/bgrins/TinyColor) - converts color codes
+* [TinyColor](https://github.com/bgrins/TinyColor) - converts color codes
 
 
 Design
