@@ -150,6 +150,12 @@ var defaultColor = "#fffde8",
       a.click();
     };
 
+// if no category is remembered hide settings dialog text and only show background's
+if (!localStorage.getItem("rememberCategory")) {
+  $(".move-holder, .feature[data-display], .feature[data-trigger]").hide();
+  $(".feature[data-trigger=background]").show();
+}
+
 // change categories
 $(".categories .category").on("click", function() {
   // save active category
