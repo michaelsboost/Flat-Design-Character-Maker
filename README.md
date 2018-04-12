@@ -56,6 +56,12 @@ I posted a video on YouTube showing you exactly how you can add a feature design
 
 You can watch that video here - https://www.youtube.com/watch?v=8zpcx4210IE
 
+I recommend designing the character in Gravit Designer because the code it outputs is cleaner and easier to manage than any other vector editor I've used. 
+
+**NOTE**: You will not be able to change the fill color if fill is specified as a style attribute, but only as a fill html attribute.
+
+<hr>
+
 The Flat Design Character Maker is no longer an active project however you can submit a pull request or simply share the project :)
 
 Of course the app is free and open source, so you can always fork the project and have fun :)
