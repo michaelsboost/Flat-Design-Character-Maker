@@ -282,7 +282,7 @@ $("[data-class=setexport]").change(function() {
     }).then((result) => {
       if (result.value) {
         blob = new Blob([ $(".viewer").html() ], {type: "text/html"});
-        saveAs(blob, value + ".svg");
+        saveAs(blob, result.value + ".svg");
 
         swal(
           'Yay!',
