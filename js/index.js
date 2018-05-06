@@ -46,6 +46,8 @@ var defaultColor = "#fffde8",
           $('.picker').minicolors({
             position: 'top right'
           });
+          
+          $("[data-action=switch-hands]").text("Switch to right handed");
         } else {
           // switch to right handed
           $(".cp-holder").addClass("cp-left");
@@ -57,6 +59,8 @@ var defaultColor = "#fffde8",
           $('.picker').minicolors({
             position: 'top left'
           });
+          
+          $("[data-action=switch-hands]").text("Switch to left handed");
         }
       }
       if ( localStorage.getItem("rememberCategory")) {
@@ -447,6 +451,8 @@ $("[data-action=switch-hands]").click(function() {
     $('.picker').minicolors({
       position: 'top right'
     });
+    
+    this.textContent = "Switch to right handed";
   } else {
     localStorage.setItem("checkHands", "rightHanded");
 
@@ -460,6 +466,8 @@ $("[data-action=switch-hands]").click(function() {
     $('.picker').minicolors({
       position: 'top left'
     });
+    
+    this.textContent = "Switch to left handed";
   }
   
   // close menu
