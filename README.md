@@ -28,14 +28,13 @@ Tech
 
 Flat Design Character Maker uses a number of open source projects to work properly:
 
-* [jQuery](http://jquery.com/) - duh
-* [JQWidgets](http://www.jqwidgets.com/jquery-widgets-demo/demos/jqxsplitter/index.htm#demos/jqxsplitter/nested-splitters.htm) - resizable columns
-* [JQuery Mini Colors](https://labs.abeautifulsite.net/jquery-minicolors/) - color picker
-* [FabricJS](http://fabricjs.com/) - Converts SVG to PNG
+* [JQWidgets](http://www.jqwidgets.com/jquery-widgets-demo/demos/jqxsplitter/index.htm#demos/jqxsplitter/nested-splitters.htm) - Resizable columns
+* [JQuery Mini Colors](https://labs.abeautifulsite.net/jquery-minicolors/) - Color picker
+* [jQuery](http://jquery.com/) - Because the first two libraries abve require it
+* [saveSvgAsPng](https://github.com/exupero/saveSvgAsPng) - Saves our SVG as a PNG
 * [FileSaver.js](https://github.com/eligrey/FileSaver.js/) - Easy way to save files
-* [SweetAlert2](https://sweetalert2.github.io/) - Other stylish alert dialog
-* [TinyColor](https://github.com/bgrins/TinyColor) - converts color codes
-
+* [SweetAlert2](https://sweetalert2.github.io/) - Stylish alert dialog
+* [TinyColor](https://github.com/bgrins/TinyColor) - Converts color codes
 
 Design
 -------------

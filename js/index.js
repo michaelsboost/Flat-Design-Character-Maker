@@ -3,31 +3,10 @@ var defaultColor = "#fffde8",
     duration  = 0.3,
     timing    = 'cubic-bezier(0.7, 0, 0.3, 1)',
     saveAsPNG = function(value) {
-      var canvas = new fabric.StaticCanvas('canvas');
-      canvas.clear();
-
-      var svgString = $(".viewer").html();
-
-      fabric.loadSVGFromString(svgString, function(results, options) {
-        var newImage = results[0];
-        canvas.add(newImage);
-        console.log(canvas.toDataURL("image/png"));
-      });
-
-      var iframe = Object.assign(document.createElement('iframe'), {
-        onload() {
-          var doc = this.contentDocument;
-          var a = Object.assign(doc.createElement('a'), {
-            href: canvas.toDataURL("image/png"),
-            download: value,
-          });
-          doc.body.appendChild(a);
-          a.dispatchEvent(new MouseEvent('click'));
-          setTimeout(() => this.remove());
-        },
-        style: 'display: none',
-      });
-      document.body.appendChild(iframe);
+      if ($("#canvas").is(":visible")) {
+        $("#canvas").remove();
+      }
+      saveSvgAsPng(document.getElementById("character"), value + ".png");
     },
     initializeLocalStorage = function() {
       if ( localStorage.getItem("SVGBGColor")) {
@@ -307,19 +286,30 @@ $("[data-class=setexport]").change(function() {
   $(".png-export[data-class=setexport]").click(function() {
     $(".donatebanner").fadeOut();
     
-    alertify.prompt("File name & type below!", "",
-    function(evt, value) {
-      saveAsPNG(value + ".png");
+    swal({
+      title: 'File name below!',
+      input: 'text',
+      inputPlaceholder: ".png is added on save",
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      showLoaderOnConfirm: true
+    }).then((result) => {
+      if (result.value) {
+        saveAsPNG(result.value);
 
-      swal(
-        'Yay!',
-        'You\'re was character successfully saved!',
-        'success'
-      );
-    },
-    function() {
-      // User clicked cancel
-    }).set('basic', true);
+        swal(
+          'Yay!',
+          'You\'re was character successfully saved!',
+          'success'
+        );
+      } else {
+        swal(
+          'Oops!',
+          console.error().toString(),
+          'error'
+        );
+      }
+    });
   });
   
   return false;

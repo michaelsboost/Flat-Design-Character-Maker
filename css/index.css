@@ -46,7 +46,8 @@ h2 {
 .menu .btn {
 /*  display: block;*/
   width: calc(100vw - 6em);
-  height: calc(100vh / 4 - 6px);
+/*  height: calc(100vh / 4 - 6px);*/
+  height: calc(100vh / 5 - 6px);
   margin: 5px auto;
   color: #000;
   background: #e7f0f5;
