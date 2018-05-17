@@ -3,9 +3,6 @@ var defaultColor = "#fffde8",
     duration  = 0.3,
     timing    = 'cubic-bezier(0.7, 0, 0.3, 1)',
     saveAsPNG = function(value) {
-      if ($("#canvas").is(":visible")) {
-        $("#canvas").remove();
-      }
       saveSvgAsPng(document.getElementById("character"), value + ".png");
     },
     initializeLocalStorage = function() {
