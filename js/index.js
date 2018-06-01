@@ -266,7 +266,7 @@ $("[data-class=setexport]").change(function() {
 
         swal(
           'Yay!',
-          'You\'re was character successfully saved!',
+          'You\'re character was successfully saved!',
           'success'
         );
       } else {

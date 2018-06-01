@@ -35,6 +35,7 @@ Flat Design Character Maker uses a number of open source projects to work proper
 * [FileSaver.js](https://github.com/eligrey/FileSaver.js/) - Easy way to save files
 * [SweetAlert2](https://sweetalert2.github.io/) - Stylish alert dialog
 * [TinyColor](https://github.com/bgrins/TinyColor) - Converts color codes
+* [Moveit](https://github.com/Raminsiach/Moveit) - SVG Path Animator
 
 Design
 -------------

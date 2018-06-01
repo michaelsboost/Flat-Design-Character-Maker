@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Flat Design Character Maker</title>
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
     <meta name="description" content="Just a simple flat design vector based character designer.">
     <meta name="author" content="Michael Schwartz">
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
     <link rel="SHORTCUT ICON" href="favicon.ico">
@@ -130,63 +130,48 @@
         <div class="categories fr">
           <div class="category face" 
                data-call="face">
-            &nbsp;
           </div>
           <div class="category neck" 
                data-call="neck">
-            &nbsp;
           </div>
           <div class="category hair" 
                data-call="hair">
-            &nbsp;
           </div>
           <div class="category front-hair" 
                data-call="front-hair">
-            &nbsp;
           </div>
           <div class="category ears" 
                data-call="ears">
-            &nbsp;
           </div>
           <div class="category eyebrows" 
                data-call="eyebrows">
-            &nbsp;
           </div>
           <div class="category glasses" 
                data-call="glasses">
-            &nbsp;
           </div>
           <div class="category eyes" 
                data-call="eyes">
-            &nbsp;
           </div>
           <div class="category nose" 
                data-call="nose">
-            &nbsp;
           </div>
           <div class="category facial-hair" 
                data-call="facial-hair">
-            &nbsp;
           </div>
           <div class="category mouth" 
                data-call="mouth">
-            &nbsp;
           </div>
           <div class="category head" 
                data-call="head">
-            &nbsp;
           </div>
           <div class="category body-types" 
                data-call="body-types">
-            &nbsp;
           </div>
           <div class="category shoes" 
                data-call="shoes">
-            &nbsp;
           </div>
           <div class="category background active" 
                data-call="background">
-            &nbsp;
           </div>
         </div>
         <div class="features">
@@ -200,17 +185,17 @@
               <div class="cell">
                 <div>
                   <h2>Scale: <input id="scaleadj" class="fr" type="number" step=".01" value="1"></h2> 
-                  <input id="scalerange" type="range" value="1" range="500">
+                  <input id="scalerange" type="range" value="1" max="100">
                 </div>
 
                 <div>
                   <h2>Translate X: <input id="translatexadj" class="fr" type="number" value="0"></h2> 
-                  <input id="translatexrange" type="range" value="0" min="0" range="500">
+                  <input id="translatexrange" type="range" value="0" min="0" max="100">
                 </div>
 
                 <div>
                   <h2>Translate Y: <input id="translateyadj" class="fr" type="number" value="0"></h2> 
-                  <input id="translateyrange" value="0" type="range" min="0" range="500">
+                  <input id="translateyrange" value="0" type="range" min="0" max="100">
                 </div>
               </div>
             </div>
@@ -1152,7 +1137,7 @@
     
     <!-- reload -->
     <div class="reload pointer" data-revert="design">
-      <img src="imgs/reload.svg">
+      <img src="imgs/reload.svg" alt="reload">
     </div>
     
     <!-- color picker -->
@@ -1196,14 +1181,14 @@
       <div class="table">
         <div class="cell">
           <h2 style="margin-bottom: -1em; position: relative; z-index: 1;" data-language="donateheader">Your donation helps support the developer!</h2>
-          <img src="imgs/donate.svg" style="margin: auto; display: block;">
+          <img src="imgs/donate.svg" alt="DOnate" style="margin: auto; display: block;">
 
           <div style="width: 357px; margin: -20px auto; display: inline-block;">
             <a data-class="setexport" href="javascript:void(0)">
-              <img src="imgs/no.svg" style="float: left; height: 56px;">
+              <img src="imgs/no.svg" alt="No" style="float: left; height: 56px;">
             </a>
-            <a data-class="setexport" href="https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&amp;cmd=_xclick&amp;amount=5.0&amp;item_name=Donation&amp;currency_code=USD" target="_blank">
-              <img src="imgs/yes.svg" style="float: right; height: 56px;">
+            <a data-class="setexport" href="http://michaelsboost.github.io/donate" target="_blank">
+              <img src="imgs/yes.svg" alt="Yes" style="float: right; height: 56px;">
             </a>
           </div>
         </div>
