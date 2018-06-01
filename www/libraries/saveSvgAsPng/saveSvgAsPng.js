@@ -325,26 +325,43 @@
   out$.download = (name, uri) => {
     if (navigator.msSaveOrOpenBlob) navigator.msSaveOrOpenBlob(uriToBlob(uri), name);
     else {
-      const saveLink = document.createElement('a');
-      if ('download' in saveLink) {
-        saveLink.download = name;
-        saveLink.style.display = 'none';
-        document.body.appendChild(saveLink);
-        try {
-          const blob = uriToBlob(uri);
-          const url = URL.createObjectURL(blob);
-          saveLink.href = url;
-          saveLink.onclick = () => requestAnimationFrame(() => URL.revokeObjectURL(url));
-        } catch (e) {
-          console.warn('This browser does not support object URLs. Falling back to string URL.');
-          saveLink.href = uri;
-        }
-        saveLink.click();
-        document.body.removeChild(saveLink);
-      }
-      else {
-        window.open(uri, '_temp', 'menubar=no,toolbar=no,status=no');
-      }
+      // Get access to the file system
+      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+        // Create the file.
+        fileSystem.root.getFile(name, { create: true, exclusive: false }, function (entry) {
+          // After you save the file, you can access it with this URL
+          myFileUrl = entry.toURL();
+          entry.createWriter(function(writer) {
+            writer.onwriteend = function(evt) {
+              swal(
+                'Yay!',
+                'You\'re character was successfully saved to ' + myFileUrl,
+                'success'
+              );
+            };
+            // Write to the file
+            writer.write(uri);
+          }, function(error) {
+            swal(
+              'Oops!',
+              'Could not create file writer, ' + error.code,
+              'error'
+            );
+          });
+        }, function(error) {
+          swal(
+            'Oops!',
+            'Could not create file, ' + error.code,
+            'error'
+          );
+        });
+      }, function(evt) {
+        swal(
+          'Oops!',
+          'Could not access file system, ' + evt.target.error.code,
+          'error'
+        );
+      });
     }
   };
 

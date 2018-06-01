@@ -2,14 +2,21 @@
 <html lang="en">
   <head>
     <title>Flat Design Character Maker</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
-    <meta name="description" content="Just a simple flat design vector based character designer.">
-    <meta name="author" content="Michael Schwartz">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="apple-touch-icon" href="logo.png">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
-    <link rel="SHORTCUT ICON" href="favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
     <link rel="stylesheet" href="libraries/normalize/normalize.css" />
     <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.base.css">
     <link rel="stylesheet" href="libraries/jqwidgets/styles/jqx.android.css">
@@ -1148,8 +1155,8 @@
       <svg width="100px" height="100px">
         <path id="first" d="M 30 40 L 70 40 C 90 40 90 75 60 85 A 40 40 0 0 1 20 20 L 80 80"></path>
         <path id="middle" d="M 30 50 L 70 50"></path>
-         <path id="second" d="M 70 60 L 30 60 C 10 60 10 20 40 15 A 40 38 0 1 1 20 80 L 80 20"></path>
-    </svg>
+        <path id="second" d="M 70 60 L 30 60 C 10 60 10 20 40 15 A 40 38 0 1 1 20 80 L 80 20"></path>
+      </svg>
       <div class="barstrigger"></div>  
     </div>
     
@@ -1157,7 +1164,7 @@
     <div class="menu" style="display: none;">
       <div class="table">
         <div class="cell">
-          <button class="btn png-export" onclick="openInNewTab('https://github.com/michaelsboost/Flat-Design-Character-Maker')">
+          <button class="btn png-export" onclick="cordova.InAppBrowser.open('https://github.com/michaelsboost/Flat-Design-Character-Maker', '_system'); return false;">
             Contribute
           </button>
           <button class="btn png-export" 
@@ -1195,6 +1202,7 @@
       </div>
     </div>
     
+    <script src="cordova.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
