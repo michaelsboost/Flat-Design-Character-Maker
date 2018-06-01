@@ -4,7 +4,13 @@ document.addEventListener('deviceready', function() {
       duration  = 0.3,
       timing    = 'cubic-bezier(0.7, 0, 0.3, 1)',
       saveAsPNG = function(value) {
-        saveSvgAsPng(document.getElementById("character"), value + ".png");
+        // saveSvgAsPng(document.getElementById("character"), value + ".png");
+        
+        swal(
+          'Oops!',
+          'Could not save as image; Please take a screenshot instead.',
+          'error'
+        );
       },
       initializeLocalStorage = function() {
         if ( localStorage.getItem("SVGBGColor")) {
