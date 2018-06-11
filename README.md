@@ -44,7 +44,7 @@ Design
 To-Do
 -------------
 
-- fix export to png
+- fix export to png on Android
 - add more content to categories and assets
 
 Development
