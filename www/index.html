@@ -181,17 +181,17 @@
               <div class="cell">
                 <div>
                   <h2>Scale: <input id="scaleadj" class="fr" type="number" step=".01" value="1"></h2> 
-                  <input id="scalerange" type="range" value="1" max="100">
+                  <input id="scalerange" type="range" value="1" min="0" max="100" step=".01">
                 </div>
 
                 <div>
                   <h2>Translate X: <input id="translatexadj" class="fr" type="number" value="0"></h2> 
-                  <input id="translatexrange" type="range" value="0" min="0" max="100">
+                  <input id="translatexrange" type="range" value="0" min="-1000" max="1000">
                 </div>
 
                 <div>
                   <h2>Translate Y: <input id="translateyadj" class="fr" type="number" value="0"></h2> 
-                  <input id="translateyrange" value="0" type="range" min="0" max="100">
+                  <input id="translateyrange" value="0" type="range" min="-1000" max="1000">
                 </div>
               </div>
             </div>
@@ -1168,25 +1168,6 @@
                   data-action="switch-hands">
             Switch to left handed
           </button>
-        </div>
-      </div>
-    </div>
-    
-    <!-- donate dialog -->
-    <div class="donatebanner hide">
-      <div class="table">
-        <div class="cell">
-          <h2 style="margin-bottom: -1em; position: relative; z-index: 1;" data-language="donateheader">Your donation helps support the developer!</h2>
-          <img src="imgs/donate.svg" alt="DOnate" style="margin: auto; display: block;">
-
-          <div style="width: 357px; margin: -20px auto; display: inline-block;">
-            <a data-class="setexport" href="javascript:void(0)">
-              <img src="imgs/no.svg" alt="No" style="float: left; height: 56px;">
-            </a>
-            <a data-class="setexport" href="http://michaelsboost.github.io/donate" target="_blank">
-              <img src="imgs/yes.svg" alt="Yes" style="float: right; height: 56px;">
-            </a>
-          </div>
         </div>
       </div>
     </div>

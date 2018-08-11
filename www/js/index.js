@@ -287,11 +287,12 @@ document.addEventListener('deviceready', function() {
   });
 
   // save button file dialog
-  $("[data-class=setexport]").change(function() {
-    // save as svg image
-    $(".svg-export[data-class=setexport]").click(function() {
-      $(".donatebanner").fadeOut();
 
+  // open donate dialog
+  $("[data-action=export]").click(function() {
+    
+    // save as svg image
+    if ( $(this).hasClass('svg-export') ) {
       swal({
         title: 'File name below!',
         input: 'text',
@@ -303,6 +304,12 @@ document.addEventListener('deviceready', function() {
         if (result.value) {
           blob = new Blob([ $(".viewer").html() ], {type: "text/html"});
           saveFile(blob, result.value + ".svg");
+
+          swal(
+            'Yay!',
+            'You\'re was character successfully saved!',
+            'success'
+          );
         } else {
           swal(
             'Oops!',
@@ -311,12 +318,7 @@ document.addEventListener('deviceready', function() {
           );
         }
       });
-    });
-
-    // save as png image
-    $(".png-export[data-class=setexport]").click(function() {
-      $(".donatebanner").fadeOut();
-
+    } else if ( $(this).hasClass("png-export") ) {
       swal({
         title: 'File name below!',
         input: 'text',
@@ -335,9 +337,16 @@ document.addEventListener('deviceready', function() {
           );
         }
       });
-    });
+    } else {
+      swal(
+        'Oops!',
+        "Couldn't save image or vector!",
+        'error'
+      );
+    }
 
-    return false;
+    // close menu
+    $(".barstrigger").trigger("click");
   });
 
   // hamburger menu settings
@@ -435,19 +444,6 @@ document.addEventListener('deviceready', function() {
     orientation: 'horizontal',
     panels: [{ size: "50%",collapsible:false },
              { size: "50%" }]
-  });
-
-  // open donate dialog
-  $("[data-action=export]").click(function() {
-
-    // before export ask to donate
-    $("[data-class=setexport]").attr("class", this.className.toString()).trigger("change");
-
-    // opens donate dialog
-    $(".donatebanner").fadeIn();
-
-    // close menu
-    $(".barstrigger").trigger("click");
   });
 
   // switch hands button clicked

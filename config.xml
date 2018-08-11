@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
   xmlns:gap   = "http://phonegap.com/ns/1.0"
   id          = "com.webdgap.flatdesigncharactermaker"
-  version     = "0.0.1"
-  versionCode = "1">
+  version     = "0.0.2"
+  versionCode = "2">
   <name>Flat Design Character Maker</name>
   <description>
     Just a simple flat design vector based character designer.
