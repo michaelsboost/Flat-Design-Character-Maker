@@ -18,7 +18,7 @@ MIT
 Availability
 -------------
 
-[Android](https://play.google.com/store/apps/details?id=com.webdgap.flatdesigncharactermaker)
+[Online](http://michaelsboost.github.io/Flat-Design-Character-Maker) and [Android](https://play.google.com/store/apps/details?id=com.webdgap.flatdesigncharactermaker)
 
 If you want this as a desktop application you can use
 [WebDGap](http://michaelsboost.github.io/WebDGap)  
