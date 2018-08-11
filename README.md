@@ -8,7 +8,7 @@ Just a simple flat design vector based character designer.
 Version
 -------------
 
-0.0.1
+0.0.2
 
 License
 -------------
@@ -59,6 +59,9 @@ You can watch that video here - https://www.youtube.com/watch?v=8zpcx4210IE
 I recommend designing the character in Gravit Designer because the code it outputs is cleaner and easier to manage than any other vector editor I've used. 
 
 **NOTE**: You will not be able to change the fill color if fill is specified as a style attribute, but only as a fill html attribute.
+
+*As of August 11, 2018 The Flat Design Character Maker is no longer an active project.
+All updates as of that date and on are solely contributor based implementations.*
 
 <hr>
 
