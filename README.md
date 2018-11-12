@@ -43,6 +43,10 @@ Design
 -------------
 * Currently all the characters were designed by [Michael Schwartz](http://michaelsboost.github.io/) using [Gravit Designer](https://designer.io/).
 
+If you like the Flat Design Character Maker you may also like the Cartoon Avatar Creator.
+
+[![Cartoon Avatar Creator](https://raw.githubusercontent.com/michaelsboost/Cartoon-Avatar-Creator/gh-pages/screenshot.png)](http://michaelsboost.github.io/Cartoon-Avatar-Creator)
+
 To-Do
 -------------
 
