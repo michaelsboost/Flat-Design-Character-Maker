@@ -20,6 +20,8 @@ Availability
 
 [Online](http://michaelsboost.github.io/Flat-Design-Character-Maker) and [Android](https://play.google.com/store/apps/details?id=com.webdgap.flatdesigncharactermaker)
 
+[![Android](https://michaelsboost.github.io/Flat-Design-Character-Maker/imgs/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.webdgap.flatdesigncharactermaker)
+
 If you want this as a desktop application you can use
 [WebDGap](http://michaelsboost.github.io/WebDGap)  
 
